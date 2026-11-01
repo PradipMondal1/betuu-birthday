@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Betuu ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg,#160d2c,#54245f,#a34479);
+    color: white;
+    font-family: 'Segoe UI',sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+#home { display: flex; }
+
+h1 {
+    color: #ffb6dc;
+    font-size: clamp(30px,7vw,48px);
+    text-shadow: 0 0 20px #ff69b4;
+    margin: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 15px;
+}
+
+button {
+    padding: 14px 30px;
+    margin: 15px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg,#ff4fa3,#b45cff);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff69b4;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.card {
+    width: 100%;
+    max-width: 550px;
+    padding: 25px;
+    border: 1px solid #ffb6dc;
+    border-radius: 25px;
+    background: #ffffff15;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px #ff69b455;
+}
+
+.cake {
+    font-size: 115px;
+    animation: bounce 1.5s infinite;
+    filter: drop-shadow(0 0 20px #ff69b4);
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-18px) rotate(3deg); }
+}
+
+.special {
+    color: #ffb6dc;
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 25px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    to { text-shadow: 0 0 25px #ff69b4; }
+}
+
+.gallery-img {
+    width: 100%;
+    border-radius: 20px;
+    border: 3px solid #ffb6dc;
+    box-shadow: 0 0 25px #ff69b4;
+    transition: .4s;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: float 7s linear forwards;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.gift {
+    font-size: 110px;
+    cursor: pointer;
+    animation: giftBounce 1.5s infinite;
+    filter: drop-shadow(0 0 20px #ff69b4);
+}
+
+@keyframes giftBounce {
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.letter {
+    display: none;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.piece {
+    position: absolute;
+    top: -20px;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="confetti"></div>
+
+<!-- PAGE 1 -->
+
+<section class="page" id="home">
+
+    <div style="font-size:70px">💗</div>
+
+    <h1>Hey Betuu!</h1>
+
+    <p>
+        Someone special has made something<br>
+        just for you... 🥹❤️
+        <br><br>
+        Are you ready for your surprise?
+    </p>
+
+    <button onclick="startExperience()">
+        Open Your Surprise 🎁
+    </button>
+
+    <button onclick="stopMusic()">
+        Stop Music 🔇
+    </button>
+
+</section>
+
+
+<!-- PAGE 2: BIRTHDAY -->
+
+<section class="page" id="birthday">
+
+    <div style="font-size:35px">🕯️ 🕯️ 🕯️</div>
+
+    <div class="cake" id="cake">🎂</div>
+
+    <h1>Happy Birthday Radhika!</h1>
+
+    <div class="card">
+
+        <p>
+            Hey Betuu! ❤️
+            <br><br>
+            Today is your special day! 🥹
+            <br><br>
+            May your life always be filled
+            with happiness, laughter and
+            beautiful memories.
+            <br><br>
+            You deserve all the happiness
+            in this world! 💗
+        </p>
+
+        <div class="special">
+            I lovee youuu soooo much
+            betuuuuuuu ❤️
+        </div>
+
+    </div>
+
+    <h2 id="wish" style="margin:20px;color:#ffb6dc">
+        Make a wish, Betuu! ✨
+    </h2>
+
+    <button id="blowBtn" onclick="blowCandles()">
+        Blow Candles 🕯️
+    </button>
+
+    <button onclick="showPage('gallery')">
+        See Our Memories 📸
+    </button>
+
+</section>
+
+
+<!-- PAGE 3: GALLERY -->
+
+<section class="page" id="gallery">
+
+    <div style="font-size:55px">📸</div>
+
+    <h1>Our Special Memories ❤️</h1>
+
+    <div class="card">
+
+        <img
+            src="betuu-frame.png"
+            alt="Betuu's Birthday Photo"
+            class="gallery-img"
+        >
+
+        <h2 style="color:#ffb6dc;margin:20px">
+            My Favourite Memory 💗
+        </h2>
+
+        <p>
+            Some moments become memories
+            that stay forever. 🥹
+            <br><br>
+            This picture will always be special! ❤️
+        </p>
+
+    </div>
+
+    <button onclick="showPage('surprise')">
+        Open Final Surprise 💌
+    </button>
+
+</section>
+
+
+<!-- PAGE 4: FINAL MESSAGE -->
+
+<section class="page" id="surprise">
+
+    <div style="font-size:75px">💌</div>
+
+    <h1>For My Betuu ❤️</h1>
+
+    <div class="card">
+
+        <p>
+            Radhika, you are truly special! 🌸
+            <br><br>
+            I hope this little website brings
+            a big smile to your face.
+            <br><br>
+            Keep smiling, keep shining and
+            have the most beautiful birthday ever! 🥹
+            <br><br>
+            Today is all about YOU! 🎀
+        </p>
+
+        <div class="special">
+            I lovee youuu soooo much
+            betuuuuuuu ❤️
+        </div>
+
+    </div>
+
+    <button onclick="showPage('gift')">
+        One Last Surprise 🎁
+    </button>
+
+</section>
+
+
+<!-- PAGE 5: GIFT -->
+
+<section class="page" id="gift">
+
+    <h1>A Special Gift For You! 💗</h1>
+
+    <p>Hey Betuu, tap on your gift! 🥹</p>
+
+    <div class="gift" onclick="openGift()">
+        🎁
+    </div>
+
+    <div class="card letter" id="letter">
+
+        <h1>Dear Betuu ❤️</h1>
+
+        <p>
+            Happy Birthday Radhika! 🌸
+            <br><br>
+
+            I hope your every day is filled
+            with happiness and beautiful moments.
+            <br><br>
+
+            Never stop smiling and always
+            keep shining! ✨
+            <br><br>
+
+            You are special, Betuu! 🥹
+        </p>
+
+        <div class="special">
+            I lovee youuu soooo much
+            betuuuuuuu ❤️
+        </div>
+
+        <h2 style="margin-top:25px;color:#ffb6dc">
+            HAPPY BIRTHDAY! 🎂
+        </h2>
+
+    </div>
+
+    <button onclick="showPage('home')">
+        Replay Your Surprise 🔄
+    </button>
+
+</section>
+
+
+<script>
+
+// PAGE NAVIGATION
+
+function showPage(id) {
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.style.display = "none";
+    });
+
+    document.getElementById(id).style.display = "flex";
+
+    window.scrollTo(0,0);
+}
+
+
+// MUSIC
+
+let audioContext;
+let musicTimer;
+let musicPlaying = false;
+
+const notes = [
+    523,659,784,659,
+    587,698,880,784,
+    659,784,988,784,
+    698,659,587,523
+];
+
+function playMusic() {
+
+    if (musicPlaying) return;
+
+    audioContext = new (window.AudioContext ||
+        window.webkitAudioContext)();
+
+    audioContext.resume();
+
+    musicPlaying = true;
+
+    let index = 0;
+
+    function playNote() {
+
+        if (!musicPlaying || !audioContext) return;
+
+        let oscillator = audioContext.createOscillator();
+        let gain = audioContext.createGain();
+
+        oscillator.type = "sine";
+        oscillator.frequency.value = notes[index];
+
+        gain.gain.setValueAtTime(
+            0.12,audioContext.currentTime
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.001,audioContext.currentTime+0.45
+        );
+
+        oscillator.connect(gain);
+        gain.connect(audioContext.destination);
+
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime+0.45);
+
+        index = (index+1)%notes.length;
+    }
+
+    playNote();
+
+    musicTimer = setInterval(playNote,500);
+}
+
+function stopMusic() {
+
+    musicPlaying = false;
+    clearInterval(musicTimer);
+
+    if(audioContext) {
+        audioContext.close();
+        audioContext = null;
+    }
+}
+
+
+// START EXPERIENCE
+
+function startExperience() {
+    playMusic();
+    showPage('birthday');
+}
+
+
+// BLOW CANDLES
+
+function blowCandles() {
+
+    document.getElementById("cake").innerHTML = "🎂💨";
+
+    document.getElementById("wish").innerHTML =
+        "Your wish is on its way, Betuu! ❤️✨";
+
+    document.getElementById("blowBtn").innerHTML =
+        "Happy Birthday Betuu! 🎉";
+
+    document.getElementById("blowBtn").disabled = true;
+
+    celebration();
+}
+
+
+// CONFETTI
+
+function celebration() {
+
+    const area = document.getElementById("confetti");
+
+    const emojis = ["🎉","💗","✨","🎊","💕","🌸"];
+
+    for(let i=0;i<80;i++) {
+
+        let piece = document.createElement("div");
+
+        piece.className = "piece";
+
+        piece.innerHTML =
+            emojis[Math.floor(Math.random()*emojis.length)];
+
+        piece.style.left = Math.random()*100+"vw";
+
+        piece.style.animationDelay =
+            Math.random()*2+"s";
+
+        piece.style.fontSize =
+            (15+Math.random()*25)+"px";
+
+        area.appendChild(piece);
+
+        setTimeout(()=>piece.remove(),5000);
+    }
+}
+
+
+// FLOATING HEARTS
+
+function createHeart() {
+
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        Math.random()>.5 ? "💗" : "✨";
+
+    heart.style.left = Math.random()*100+"vw";
+
+    heart.style.fontSize =
+        (20+Math.random()*25)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),7000);
+}
+
+setInterval(createHeart,500);
+
+
+// OPEN GIFT
+
+function openGift() {
+
+    document.getElementById("letter").style.display = "block";
+
+    document.querySelector(".gift").innerHTML = "💝";
+
+    celebration();
+
+}
+
+</script>
+
+</body>
+</html>
